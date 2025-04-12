@@ -11,10 +11,10 @@
 | 参数 | 含义 |
 | ---- | --- |
 | $T$ | 周期 |
-| $\Delta_i$ | 第$i$层位移 |
-| $m_i$ | 第$i$层质量 |
-| $h_i$ | 第$i$层标高(楼层至地面距离) |
-| $w_i$ | 第$i$层竖向重力荷载 |
+| $\Delta_i$ | 第 $i$ 层位移 |
+| $m_i$ | 第 $i$ 层质量 |
+| $h_i$ | 第 $i$ 层标高(楼层至地面距离) |
+| $w_i$ | 第 $i$ 层竖向重力荷载 |
 | $V_{base}$ | 底部剪力 |
 | $M_{base}$ | 底部弯矩 |
 ## 2.2 SODF参数
@@ -29,25 +29,34 @@
 | $M_{base}$ | 底部弯矩 |
 | $k$ | 初始刚度 |
 
-注：SDOF中，$T$、$V_{base}$、$M_{base}$的含义与数值均与MDOF相同
+注：SDOF中， $T$ 、 $V_{base}$ 、 $M_{base}$ 的含义与数值均与MDOF相同
 ## 3 转换公式
 (1) SDOF位移：
+
 $$
 \Delta = \frac{\sum_{i=1}^n m_i \Delta_i^2}{\sum_{i=1}^n m_i \Delta_i}
 $$
+
 (2) SDOF质量：
+
 $$
 m = \sum_{i=1}^n \frac{m_i\Delta_i}{\Delta}
 $$
+
 (3) SDOF高度：
+
 $$
 h = \frac{\sum_{i=1}^n m_i \Delta_i h_i}{\sum_{i=1}^n m_i \Delta_i}
 $$
+
 (4) SDOF初始刚度：
+
 $$
 k = \frac{4\pi^2m}{T^2}
 $$
+
 (5) SDOF竖向重力荷载：
+
 $$
 w = \frac{\sum_{i=1}^n w_i \Delta_i \times \sum_{i=1}^n m_i \Delta_i}{\sum_{i=1}^n m_i \Delta_i^2}
 $$
